@@ -1,0 +1,19 @@
+<%
+    var alerts = model._alerts || [];
+    for (var i = 0, l = alerts.length; i < l; i++) {
+        var alert = alerts[i];
+%>
+        <div class="alert alert-<%= alert.severity || 'block' %>">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <%
+                if (alert.severity == 'block') {
+            %>
+                <h4 class="alert-heading">Attention!</h4>
+            <%
+                }
+            %>
+            <%= alert.message %>
+        </div>
+<%
+    }
+%>

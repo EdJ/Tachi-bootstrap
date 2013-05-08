@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en-gb" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <title><%= title %></title>
+</head>
+<body>
+    <%= Html.View('Alerts', model) %>
+    <div class="container">
+        <%= view %>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        var scripts = [
+            '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js'
+        ];
+
+        for (var i = scripts.length; i--; ) {
+            var n = document.createElement('script');
+            n.type = 'text/javascript';
+            n.async = true;
+            n.src = scripts[i];
+            document.getElementsByTagName('body')[0].appendChild(n);
+        }
+    </script>
+</body>
+</html>

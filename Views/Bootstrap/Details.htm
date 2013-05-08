@@ -1,0 +1,19 @@
+<%! overView: 'defaultOverView', title: 'Edit | Bootstrap Demo | SigmoidFx' %>
+<fieldset>
+    <legend>
+        <%= model.title %>
+        <small>
+            Details
+        </small>
+    </legend>
+
+    <%=
+        Html.DisplayFor(model.item)
+    %>
+
+</fieldset>
+<div>
+    <a href="<%= Html.ActionLink('Bootstrap', 'Index') %>" class="btn">
+        Back to List
+    </a>
+</div>

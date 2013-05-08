@@ -1,0 +1,97 @@
+<%! overView: 'defaultOverView', title: 'List | Bootstrap Demo | SigmoidFx' %>
+<h4>
+    <%= model.title || 'Items' %>
+    <small>
+        Listing
+    </small>
+</h4>
+<table class="table">
+    <%
+        if (model.caption) {
+    %>
+        <caption>
+            <%= model.caption %>
+        </caption>
+    <%
+        }
+    %>
+    <thead>
+        <tr>
+            <%
+            var items = model.item;
+            var firstItem = items[0];
+            if (firstItem) {
+                for (var property in firstItem) {
+                    if (!firstItem.hasOwnProperty(property) || property[0] === '_') {
+                        continue;
+                    }
+            %>
+            <td>
+                <%= property.withSpaces() %>
+            </td>
+            <%
+                }
+            }
+            %>
+        </tr>
+    </thead>
+    <tbody>
+    <% 
+        var length = items.length;
+        for (var i = 0; i < length; i++) {
+            var item = items[i];
+    %>
+        <tr>
+        <%
+            for (var property in item) {
+                if (!firstItem.hasOwnProperty(property) || property[0] === '_') {
+                    continue;
+                }
+        %>
+            <td>
+                <%= Html.Encode(item[property]) %>
+            </td>
+        <%
+            }
+        %>
+        <td>
+            <div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                    Action
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <%
+                        var routeValues = { id : item.Id };
+                    %>
+                        <li>
+                            <a href="<%= Html.ActionLink({ controller: 'Bootstrap', action: 'Details', id: item.Id }) %>">
+                                Details
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<%= Html.ActionLink({ controller: 'Bootstrap', action: 'Edit', id: item.Id }) %>">
+                                 Edit
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="<%= Html.ActionLink({ controller: 'Bootstrap', action: 'Delete', id: item.Id }) %>">
+                                Delete
+                            </a>
+                        </li>     
+                </ul>
+            </div>
+        </td>
+        </tr>
+    <%
+        }
+    %>
+    </tbody>
+</table>
+<p>
+    
+    <a href="<%= Html.ActionLink('Bootstrap','Create') %>" class="btn">
+        New Item
+    </a>
+</p>

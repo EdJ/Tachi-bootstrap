@@ -1,0 +1,30 @@
+<%! overView: 'defaultOverView', title: 'Edit | Bootstrap Demo | SigmoidFx' %>
+<form method="POST">
+    <% /* Validation Summary goes here */ %>
+    <fieldset class="form-horizontal">
+        <legend>
+            <%= model.title %>
+            <small>
+                Details
+            </small>
+        </legend>
+        
+        <%=
+            Html.EditorFor(model.item, 'model')
+        %>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Save changes
+            </button>
+            <a href="<%= Html.ActionLink('Bootstrap', 'Index') %>" class="btn">
+                Cancel
+            </a>
+        </div>
+    </fieldset>
+</form>
+<div>
+    <a href="<%= Html.ActionLink('Bootstrap', 'Index') %>" class="btn">
+        Back to List
+    </a>
+</div>
