@@ -10,10 +10,7 @@ Uses hosted versions of jQuery (ajax.googleapis.com) and Bootstrap (bootstrapcdn
 ## Quick Start
 
 Install Tachi:
-	Grab a copy from git (http://github.com/EdJ/Tachi)
-	Create a folder "node_modules"
-	Copy the Tachi files into "node_modules/Tachi"
-	(NPM coming soon!!)
+	npm install tachi
 
 Run the bootstrap:
 	node index

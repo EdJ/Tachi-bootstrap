@@ -1,9 +1,9 @@
 var settings = require('./settings');
 var routes = require('./routes');
 
-var npsHandler = require('nps');
+var TachiHandler = require('Tachi');
 
-var handler = new npsHandler(settings, routes);
+var handler = new TachiHandler(settings, routes);
 
 String.prototype.withSpaces = function () {
 	return this.replace(/([A-Z])/g, ' $1')
