@@ -2,10 +2,6 @@
 
 A Twitter Bootstrap (http://twitter.github.io/bootstrap/) quickstart template, and demo, for the Tachi node.js framework.
 
-## Installation
-
-npm install Tachi
-
 ## Overview
 
 Quickstart template using the Twitter Bootstrap library to demo the features, and usage, of the Tachi framework.
