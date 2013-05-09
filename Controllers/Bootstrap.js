@@ -59,6 +59,14 @@ demoItems.getNextId = function () {
 };
 
 module.exports = function () {
+    this._authenticate = {
+        'edit': true,
+        'edit_post': true,
+        'delete': true,
+        'create': true,
+        'create_post': true
+    };
+
     var getModel = function (item) {
         return {
             title: 'Demo',
@@ -151,5 +159,23 @@ module.exports = function () {
         demoItems.splice(itemIndex, 1);
 
         return this.RedirectToAction('Index');
+    };
+
+    this.login = function () {
+        return this.View('Login');
+    };
+
+    this.login_post = function (data) {
+        if (data.email == 'admin' && data.password == 'admin') {
+            this.Authenticate();
+            return this.RedirectToAction('Index');            
+        }
+
+        var model = {};
+        model._alerts = [{
+           message: 'Unrecognised username or password, why not try "admin", "admin".' 
+        }];
+
+        return this.View('Login', model);
     };
 };
