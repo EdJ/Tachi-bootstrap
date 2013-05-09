@@ -101,7 +101,7 @@ module.exports = function () {
 
         demoItems.push(item);
 
-        return this.RedirectToAction('Bootstrap', 'Index', { id: item.Id });
+        return this.RedirectToAction('Index', { id: item.Id });
     };
 
     this.details = function (data) {
@@ -109,7 +109,7 @@ module.exports = function () {
 
         var item = demoItems.getById(id);
         if (!item){
-            return this.RedirectToAction('Bootstrap', 'Index');
+            return this.RedirectToAction('Index');
         }
 
         var model = getModel(item);
@@ -125,7 +125,7 @@ module.exports = function () {
 
         var item = demoItems.getById(id);
         if (!item){
-            return this.RedirectToAction('Bootstrap', 'Index');
+            return this.RedirectToAction('Index');
         }
 
         var model = getModel(item);
@@ -138,14 +138,14 @@ module.exports = function () {
 
         var itemIndex = demoItems.findById(id);
         if (itemIndex === -1) {
-            return this.RedirectToAction('Bootstrap', 'Index');
+            return this.RedirectToAction('Index');
         }
 
         item = new DemoItem(item);
 
         demoItems[itemIndex] = item;
 
-        return this.RedirectToAction('Bootstrap', 'Index');
+        return this.RedirectToAction('Index');
     };
 
     this.delete = function (data) {
@@ -153,11 +153,11 @@ module.exports = function () {
 
         var itemIndex = demoItems.findById(id);
         if (itemIndex === -1){
-            return this.RedirectToAction('Bootstrap', 'Index');
+            return this.RedirectToAction('Index');
         }
 
         demoItems.splice(itemIndex, 1);
 
-        return this.RedirectToAction('Bootstrap', 'Index');
+        return this.RedirectToAction('Index');
     };
 };
