@@ -83,16 +83,12 @@ module.exports = function () {
    };
 
     this.create = function (data) {
-        if (data._method == 'POST'){
-            return this.createPost(data);
-        }
-
         var item = new DemoItem(-1);
         var model = getModel(item);
         return this.View('Edit', model);
     };
 
-    this.createPost = function (data) {
+    this.create_post = function (data) {
         var item = data.model;
 
         item.Id = demoItems.getNextId();
@@ -117,10 +113,6 @@ module.exports = function () {
     };
 
     this.edit = function (data) {
-        if (data._method == 'POST'){
-            return this.editPost(data);
-        }
-
         var id = data.id;
 
         var item = demoItems.getById(id);
@@ -132,7 +124,7 @@ module.exports = function () {
         return this.View('Edit', model);
     };
 
-    this.editPost = function (data) {
+    this.edit_post = function (data) {
         var item = data.model;
         var id = item.Id;
 
