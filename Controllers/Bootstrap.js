@@ -87,6 +87,13 @@ module.exports = function () {
             }
         }
 
+        if (data.email) {
+            model._alerts = [{
+               severity: 'info',
+               message: 'Welcome, ' + data.email 
+           }];
+        }
+
         return this.View('List', model);
    };
 
@@ -145,7 +152,7 @@ module.exports = function () {
 
         demoItems[itemIndex] = item;
 
-        return this.RedirectToAction('Index');
+        return this.RedirectToAction('Index', { id: item.Id });
     };
 
     this.delete = function (data) {
@@ -166,14 +173,15 @@ module.exports = function () {
     };
 
     this.login_post = function (data) {
-        if (data.email == 'admin' && data.password == 'admin') {
+        if (data.email == 'admin@admin.com' && data.password == 'admin') {
             this.Authenticate();
-            return this.RedirectToAction('Index');            
+
+            return this.RedirectToAction('Index', { email: data.email }); 
         }
 
         var model = {};
         model._alerts = [{
-           message: 'Unrecognised username or password, why not try "admin", "admin".' 
+           message: 'Unrecognised username or password, why not try "admin@admin.com", "admin".' 
         }];
 
         return this.View('Login', model);
