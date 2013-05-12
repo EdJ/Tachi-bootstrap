@@ -1,7 +1,7 @@
 var settings = require('./settings');
 var routes = require('./routes');
 
-var TachiHandler = require('Tachi');
+var TachiHandler = require('tachi');
 
 var handler = new TachiHandler(settings, routes);
 
