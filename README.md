@@ -10,9 +10,11 @@ Uses hosted versions of jQuery (ajax.googleapis.com) and Bootstrap (bootstrapcdn
 ## Quick Start
 
 Install Tachi:
+
 	npm install
 
 Run the bootstrap:
+
 	node index
 
 ## Features
