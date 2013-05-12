@@ -1,0 +1,34 @@
+{
+  "name": "tachi-bootstrap",
+  "description": "Twitter Dootstrap quickstart template for the Tachi framework.",
+  "version": "0.0.1",
+  "author": "Ed J <ed@ed-j.co.uk>",
+  "contributors": [
+    {
+      "name": "Ed J",
+      "email": "ed@ed-j.co.uk"
+    }
+  ],
+  "dependencies": {
+    "tachi": "0.0.2"
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+    "tachi",
+    "quickstat",
+    "demo",
+    "template",
+    "mvc",
+    "rapid"
+  ],
+  "repository": "git://github.com/EdJ/tachi-bootstrap",
+  "main": "index",
+  "bin": {
+  },
+  "scripts": {
+  },
+  "engines": {
+    "node": "*"
+  }
+}
