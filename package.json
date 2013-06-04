@@ -10,7 +10,7 @@
     }
   ],
   "dependencies": {
-    "tachi": "0.0.2"
+    "tachi": "0.0.4"
   },
   "devDependencies": {
   },
