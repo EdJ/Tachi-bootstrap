@@ -59,13 +59,13 @@ demoItems.getNextId = function () {
 };
 
 module.exports = function () {
-    this._authenticate = {
-        'edit': true,
-        'edit_post': true,
-        'delete': true,
-        'create': true,
-        'create_post': true
-    };
+    this._authenticate = [
+        'edit',
+        'edit_post',
+        'delete',
+        'create',
+        'create_post'
+    ];
 
     var getModel = function (item) {
         return {

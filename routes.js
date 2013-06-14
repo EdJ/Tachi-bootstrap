@@ -24,3 +24,5 @@ exports.routes = [
 exports.statics = [
   '/Content'
 ];
+exports.defaultRoute = '/Error?errorCode=404';
+exports.loginUrl = '/Bootstrap/Login';
