@@ -1,7 +1,7 @@
 {
   "name": "tachi-bootstrap",
   "description": "Twitter Dootstrap quickstart template for the Tachi framework.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Ed J <ed@ed-j.co.uk>",
   "contributors": [
     {
@@ -10,7 +10,7 @@
     }
   ],
   "dependencies": {
-    "tachi": "0.0.4"
+    "tachi": "0.0.5"
   },
   "devDependencies": {
   },
